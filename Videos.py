@@ -5,6 +5,10 @@ import sys
 #crear una captura de video
 cap = cv.VideoCapture(0)
 
+#propiedades de la captura
+height = cap.get(cv.CAP_PROP_FRAME_HEIGHT)
+print(height)
+
 if not cap.isOpened():
     sys.exit('No se pudo abrir la camara')
 
