@@ -18,7 +18,7 @@ if __name__ == '__main__':
     #crear grafica
     plt.figure(figsize =(12,6))
     
-    image = cv.imread('./images/grogu.jpg',)
+    image = cv.imread('./images/grogu.jpg',cv.IMREAD_GRAYSCALE)
 
     if image is None:
         sys.exit('No se pudo abrir la imagen')
