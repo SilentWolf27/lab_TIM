@@ -17,7 +17,7 @@ while cv.waitKey(60) != ord('p'):
     ret, frame = cap.read()
 
     if not ret:
-        print('No se recivio ningun frame... El programa se cerrara.')
+        print('No se recibio ningun frame... El programa se cerrara.')
         break
 
     cv.imshow('video', frame)
