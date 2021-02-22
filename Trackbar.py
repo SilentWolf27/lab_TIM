@@ -8,11 +8,19 @@ img = np.zeros((100,100,3), np.uint8)
 cv.namedWindow('image')
 
 # create trackbars for color change
-cv.createTrackbar('value','image', 0, 255,nothing)
+cv.createTrackbar('red','image', 0, 255,nothing)
+cv.createTrackbar('green','image', 0, 255,nothing)
+cv.createTrackbar('blue','image', 0, 255,nothing)
 
 while cv.waitKey(60) != ord('p'):
-    cv.imshow('image',img)
+    red = cv.getTrackbarPos('red','image')
+    green = cv.getTrackbarPos('green','image')
+    blue = cv.getTrackbarPos('blue','image')
     
-    print(cv.getTrackbarPos('value','image'))
+    img[:,:,0] = blue
+    img[:,:,1] = green
+    img[:,:,2] = red
+
+    cv.imshow('image',img)
 
 cv.destroyAllWindows()
